@@ -43,6 +43,11 @@ void loop() {
     if(data == 0){
       data = key_value;
     }
+    //Uncomment the code below to find the values your remote uses
+    //Serial.println(data,HEX);
+    //IrReceiver.resume();
+    //return;
+    //Recomment the code above to get the app back to working condition
     switch (data) { // compare the value to the following cases
       case 0xEA15FF00:
         Serial.println("+");
@@ -73,6 +78,7 @@ void loop() {
         break;
     }
     key_value = data; // store the value as key_value
+    
     IrReceiver.resume(); // Enable receiving of the next value
   }
     /* USE NEW 3.x FUNCTIONS
